@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GirlsOnLine</title>
+    <!-- 引入Js -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/litstronger/live2d-moc3@master/js/frame/live2dcubismcore.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.1/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/litstronger/live2d-moc3@master/js/live2dcubismframework.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/litstronger/live2d-moc3@master/js/live2dcubismpixi.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/litstronger/live2d-moc3@master/js/l2d.js"></script>
+  </head>
+  <body>
+    <select name="charactor" id="char-select" onchange="charChange()"></select>
+    <select
+      name="motions"
+      id="motion-select"
+      onchange="motionChange()"
+    ></select>
+    <div
+      class="Canvas"
+      id="L2dCanvas"
+      style="position: fixed; opacity: 1; right: 30px; z-index: 99"
+    >
+      <canvas
+        width="600"
+        height="960"
+        style="touch-action: none; cursor: inherit"
+      ></canvas>
+    </div>
+    <script src="./viewer.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
