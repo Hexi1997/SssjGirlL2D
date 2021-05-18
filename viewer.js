@@ -10,24 +10,43 @@ class Viewer {
     let bottom = config.bottom; //|| '0px'
     let bg = config.background;
     let opa = config.opacity;
-    let mobile = config.mobile;
+    let mobile = this.isMobile();
     let motions = config.motions;
+    //针对手机做显示位置优化
+    if (mobile && !(config.role in ["朱诺_共枕", "艾琳_品枫"])) {
+      right = "-110px";
+    }
+
     //针对横板L2d做特殊修改
     if (config.role === "朱诺_共枕") {
-      right = "-120px";
-      width = 1000;
-      height = 1600;
-      bottom = "-760px";
+      if (mobile) {
+        right = "-80px";
+        width = 400;
+        height = 640;
+        bottom = "-120px";
+      } else {
+        right = "-120px";
+        width = 1000;
+        height = 1600;
+        bottom = "-760px";
+      }
     }
     if (config.role === "艾琳_品枫") {
-      right = "-200px";
-      width = 700;
-      height = 1120;
-      bottom = "-400px";
+      if (mobile) {
+        right = "-200px";
+        width = 500;
+        height = 800;
+        bottom = "-220px";
+      } else {
+        right = "-200px";
+        width = 700;
+        height = 1120;
+        bottom = "-400px";
+      }
     }
-    if (!mobile) {
-      if (this.isMobile()) return;
-    }
+    // if (!mobile) {
+    //   if (this.isMobile()) return;
+    // }
     this.l2d = new L2D(config.basePath);
     this.canvas = $(".Canvas");
 

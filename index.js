@@ -768,7 +768,6 @@ function charChange() {
 document.addEventListener("DOMContentLoaded", () => {
   //初始化时随机一个l2d
   let rand = Math.floor(Math.random() * configArr.length);
-  rand = 16;
   const { name, motions, repo, width, height } = configArr[rand];
   charaIndex = rand;
   addOptionsToSelect(rand);

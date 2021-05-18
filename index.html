@@ -13,21 +13,28 @@
     <script src="https://cdn.jsdelivr.net/gh/litstronger/live2d-moc3@master/js/l2d.js"></script>
   </head>
   <body>
-    <select name="charactor" id="char-select" onchange="charChange()"></select>
+    <select
+      name="charactor"
+      id="char-select"
+      onchange="charChange()"
+      style="z-index: 100000"
+    ></select>
     <select
       name="motions"
       id="motion-select"
       onchange="motionChange()"
+      style="z-index: 100000"
     ></select>
     <div
       class="Canvas"
       id="L2dCanvas"
-      style="position: fixed; opacity: 1; right: 30px; z-index: 99"
+      style="position: fixed; opacity: 1; right: 30px; z-index: -1"
     >
       <canvas
         width="600"
         height="960"
         style="touch-action: none; cursor: inherit"
+        id="canvanInner"
       ></canvas>
     </div>
     <script src="./viewer.js"></script>
